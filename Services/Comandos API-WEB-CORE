@@ -1,0 +1,70 @@
+
+try
+{
+    ...
+}
+catch(Exception ex)
+{
+    throw ex;
+}
+---------------------------------------------------------------------------------------------------------------------
+RODAR O PROJETO
+dotnet watch run
+---------------------------------------------------------------------------------------------------------------------
+
+ATUALIZAR BANCO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+Add-Migration mudaColunasNome
+Update-Database
+
+---------------------------------------------
+
+AO INICIAR O PROJETO
+
+dotnet ef migrations add tabelaClientes
+dotnet ef database update
+
+---------------------------------------------
+
+USE master;
+GO
+ALTER DATABASE COBAIA 
+SET SINGLE_USER 
+WITH ROLLBACK IMMEDIATE;
+GO
+DROP DATABASE COBAIA;
+
+dotnet add package Swashbuckle.AspNetCore
+
+Scaffold-DbContext -Connection "Server=localhost,32771;database=Cobaia;User ID=SA;Password=1q2w3e4r!@#$;" -Provider 
+---------------------------------------------------------------------------------------------------------------------
+
+DOCUMENTAÇÃO 
+
+https://localhost:5001/swagger/v1/swagger.json
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+dotnet ef migrations add InitialCreate
+dot net watch run
+
+USE master;
+GO
+ALTER DATABASE COBAIA 
+SET SINGLE_USER 
+WITH ROLLBACK IMMEDIATE;
+GO
+DROP DATABASE COBAIA;
+
+dotnet add package Swashbuckle.AspNetCore
+
+
+dotnet ef database update
+
+---------------------------------------------------------------------------------------------------------------------
+
